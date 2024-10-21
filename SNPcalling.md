@@ -33,7 +33,7 @@ We are using cutadapt.  -a is the adapter -m is sequence minimum length, we'll d
 module load cutadapt
 cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0890_4_cleaned.fastq SQ0890_CD21AANXX_s_4_fastq.txt.gz
 cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0890_1_cleaned.fastq SQ0890_CDMWVANXX_s_1_fastq.txt.gz
-cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0502_1_cleaned.fastq SQ0502__S7_L007_R1_001.fastq.gz
+cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0502_1_cleaned.fastq SQ0502_S7_L007_R1_001.fastq.gz
 ````
 
  I run fastqc again on those trimmed files to confirm that no adapter is left.
