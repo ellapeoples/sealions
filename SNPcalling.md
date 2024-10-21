@@ -31,16 +31,18 @@ There is lots of adapter contamination; we'll remove it, but we won't trim reads
 We are using cutadapt.  -a is the adapter -m is sequence minimum length, we'll discard anything shorter than 30bp
 ```
 module load cutadapt
-cutadapt  -a AGATCGGAAGAGC  -m 30    -o SQ0890_CD21AANXX_s_4_cleaned.fastq SQ0890_CD21AANXX_s_4_fastq.txt.gz
-cutadapt  -a AGATCGGAAGAGC    -m 30  -o SQ0890_CDMWVANXX_s_1_cleaned.fastq SQ0890_CDMWVANXX_s_1_fastq.txt.gz
+cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0890_4_cleaned.fastq SQ0890_CD21AANXX_s_4_fastq.txt.gz
+cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0890_1_cleaned.fastq SQ0890_CDMWVANXX_s_1_fastq.txt.gz
+cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0502_1_cleaned.fastq SQ0502__S7_L007_R1_001.fastq.gz
 ````
 
  I run fastqc again on those trimmed files to confirm that no adapter is left.
 
 
 ```
-fastqc SQ0890_CD21AANXX_s_4_cleaned.fastq
-fastqc SQ0890_CDMWVANXX_s_1_cleaned.fastq
+fastqc SQ0890_4_cleaned.fastq
+fastqc SQ0890_1_cleaned.fastq
+fastqc SQ0502_1_cleaned.fastq
 ```
 
 ## SNP calling
@@ -62,9 +64,9 @@ cd ..
 
 ```
 #!/bin/sh
-mkdir rawSQ0323 samplesSQ0323 
-cd rawSQ0323
-ln -s ../source_files/SQ0323_CD*cleaned* .
+mkdir rawSQ0502 samplesSQ0502 
+cd rawSQ0502
+ln -s ../source_files/SQ0502_1_cleaned.fastq .
 cd ..
 ```
 
