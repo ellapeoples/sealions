@@ -80,7 +80,7 @@ process_radtags   -p rawSQ0890/ -o samplesSQ0890/ -b barcodes_SQ0890.txt -e pstI
 
 ```
 #!/bin/sh
-process_radtags   -p rawSQ0323/ -o sampleSQ0323/ -b barcodes_SQ0890.txt -e pstI -r -c -q --inline-null
+process_radtags   -p rawSQ0502/ -o sampleSQ0502/ -b barcodes_SQ0502.txt -e pstI -r -c -q --inline-null
 ```
 
 We now have one file per sample per lane. Some samples are on both lanes, they need to combined together, by simply adding all the reads from both lanes. 
