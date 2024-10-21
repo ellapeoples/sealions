@@ -58,7 +58,8 @@ I then create two folders to do the demultiplexing of the two lanes, and copy th
 #!/bin/sh
 mkdir rawSQ0890 samplesSQ0890 
 cd rawSQ0890
-ln -s ../source_files/SQ0890_CD*cleaned* .
+ln -s ../source_files/SQ0890_1_cleaned.fastq
+ln -s ../source_files/SQ0890_4_cleaned.fastq
 cd ..
 ```
 
