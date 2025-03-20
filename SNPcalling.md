@@ -99,10 +99,10 @@ done
 
 For second lane, but the `>>` means it will append reads if a file with the same name already exist, or create a new one if the file does not exist
 ```
-for file in samplesSQ0890/*
+for file in samplesSQ0502/*
 do
 filenodir=$(basename $file)
-zcat samplesSQ0890/$filenodir >> samples_concat/$filenodir
+zcat samplesSQ0502/$filenodir >> samples_concat/$filenodir
 done
 ```
 
@@ -163,6 +163,15 @@ populations -P output_refmap/ -M popmap_clean.txt  --vcf  -r 0.8
 
 Now you have your SNPs
 
+```
+vcftools --vcf populations.snps.vcf --minDP 5 --max-missing 0.8 --recode --out sldp5_filtered0.8
+```
 
 We found xxx SNPs for xxx samples.
 
+```
+--depth 
+--het
+```
+
+For correlation between coverage and heterozygosity 
