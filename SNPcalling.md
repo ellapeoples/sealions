@@ -6,7 +6,7 @@ We are looking at two lanes with the same individuals across both lanes I believ
 
 ## Quality control
 
-The data is signle-end. *Let's subsample it to see how it looks.*
+The data is single-end. *Let's subsample it to see how it looks.*
 
 there are  different lanes with one single  barcode file:
 
