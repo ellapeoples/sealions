@@ -128,7 +128,9 @@ ref_map.pl --samples sl_alignment --popmap popmap.txt -T 8  -o output_refmap
 
 Let's run populations alone to obtain a vcf and explore data quality:
 
-populations -P output_refmap/ -M popmap.txt  --vcf 
+```
+populations -P output_refmap/ -M popmap.txt  --vcf
+```
 
 Obtained >100k SNPs. Let's explore sample quality.
 
