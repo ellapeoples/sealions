@@ -169,7 +169,7 @@ Now you have your SNPs
 vcftools --vcf populations.snps.vcf --minDP 5 --max-missing 0.8 --recode --out sldp5_filtered0.8
 ```
 
-We found xxx SNPs for xxx samples.
+We found 54,920 SNPs for 156 samples.
 
 ```
 --depth 
