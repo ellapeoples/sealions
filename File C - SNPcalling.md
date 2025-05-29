@@ -142,8 +142,6 @@ I will re-run populations keeping only good SNPs found in more than 80% of indiv
 populations -P output_refmap/ -M popmap.txt  --vcf  -r 0.8
 ```
 
-We still have 64528 SNPs for the 190 samples. We could filter more but that seems adequate for this project.
-
 
 Let's see if some individuals are really poor or not.
 
@@ -155,7 +153,7 @@ vcftools --vcf populations.snps.vcf --missing-indv ## google vcftools
 sort -k 4n out.imiss | less # it will show you all the individuals sorted by missing data
 ```
 
-I remove .... because they have more than X.... missing data 
+I remove the individual 81Phh because they have too much missing data 
 
 I remove it and create a [popmap_clean.txt](popmap_clean.txt) and re-filter the data.
 
@@ -169,7 +167,6 @@ Now you have your SNPs
 vcftools --vcf populations.snps.vcf --minDP 5 --max-missing 0.8 --recode --out sldp5_filtered0.8
 ```
 
-We found 54,920 SNPs for 156 samples.
 
 ```
 --depth 
