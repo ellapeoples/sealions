@@ -1,8 +1,7 @@
 # SNPcalling.md
 
-The raw data is available on the High Capacity Storage of Otago University. Contact dutoit.ludovic@gmail.com for access.
 
-We are looking at two lanes with the same individuals across both lanes I believe.
+We are looking at two lanes with the same individuals across both lanes.
 
 ## Quality control
 
