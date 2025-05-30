@@ -1,4 +1,4 @@
-# SNPcalling.md
+# SNPcallingandfiltering.md
 
 
 We are looking at two lanes with the same individuals across both lanes.
