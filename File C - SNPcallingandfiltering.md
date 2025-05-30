@@ -25,7 +25,7 @@ module load FastQC
 fastqc *fq
 
 ```
-There is lots of adapter contamination; we'll remove it, but we won't trim reads to a common length since we are working with a reference-based approach.
+There is lots of adapter contamination; we'll remove it, but we won't trim reads to a common length since we are working with a reference-based approach. 
 
 We are using cutadapt.  -a is the adapter -m is sequence minimum length, we'll discard anything shorter than 30bp
 ```
@@ -36,7 +36,7 @@ cutadapt  -a CCGAGATCGGAAGAGC  -m 30  -o SQ0502_1_cleaned.fastq SQ0502_S7_L007_R
 ````
 
  I run fastqc again on those trimmed files to confirm that no adapter is left.
-
+(See File A - Adaptor for cleaning)
 
 ```
 fastqc SQ0890_4_cleaned.fastq
@@ -48,7 +48,8 @@ fastqc SQ0502_1_cleaned.fastq
 
 ### Demultiplexing
 
-barcodes are different for both lanes. They should look as specified a bit under [this section  in the manual](https://catchenlab.life.illinois.edu/stacks/manual/index.php#clean), in section 4.1.2
+Barcodes are different for both lanes. They should look as specified a bit under [this section  in the manual](https://catchenlab.life.illinois.edu/stacks/manual/index.php#clean), in section 4.1.2. 
+Barcodes are available in directory (barcodes_SQ0502.txt, barcodes_SQ0890.txt). 
 
  
 I then create two folders to do the demultiplexing of the two lanes, and copy the files for each lane. The two files for a single lane can be demultiplexed together. 
