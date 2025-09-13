@@ -184,7 +184,7 @@ NZSL155
 NZSL156"
 
 module load BWA
-src= samples_concat
+src=samples_concat
 bwa_db=PHhoo.fa
 #bwa index $bwa_db
 for sample in $files
