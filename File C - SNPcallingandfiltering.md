@@ -123,7 +123,7 @@ Then, SNP calling can be done with Stacks using a popmap file ([example](example
 #not from alignment folder
 module load Stacks
 mkdir output_refmap
-ref_map.pl --samples sl_alignment --popmap popmap.txt -T 8  -o output_refmap
+ref_map.pl --samples alignment --popmap popmap.txt -T 8  -o output_refmap
 ```
 
 
