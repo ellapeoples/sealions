@@ -184,6 +184,7 @@ NZSL155
 NZSL156"
 
 module load BWA
+module load SAMtools
 src=samples_concat
 bwa_db=PHhoo.fa
 #bwa index $bwa_db
