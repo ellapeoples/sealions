@@ -154,7 +154,7 @@ vcftools --vcf populations.snps.vcf --missing-indv ## google vcftools
 sort -k 4n out.imiss | less # it will show you all the individuals sorted by missing data
 ```
 
-I remove the individual 81Phh because they have too much missing data 
+I remove the individual 81Phh because they have too much missing data. I will also remove the individual NZSL89 as there is no metadata for this sea lion. 
 
 I remove it and create a [popmap_clean.txt](popmap_clean.txt) and re-filter the data.
 
