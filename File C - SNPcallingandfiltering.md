@@ -159,6 +159,7 @@ I remove the individual 81Phh because they have too much missing data. I will al
 I remove it and create a [popmap_clean.txt](popmap_clean.txt) and re-filter the data.
 
 ```
+module load Stacks
 populations -P output_refmap/ -M popmap_clean.txt  --vcf  -r 0.8
 ```
 
