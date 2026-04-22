@@ -12,12 +12,15 @@ Create and upload a text file with IDs for samples you want kept.
 
 ```vcftools --vcf finalsnps.vcf --keep kp_samples.txt --recode --recode-INFO-all --out kp_vcf
 ```
-
-GWAS analysis of VCF:
+Now to make a PLINK binary fileset for LD pruning and prune linked SNPs to avoid getting biased results due to LD. Then, run association. 
 NOTE: phenotype file (kp_phenotypev2) must have 3 columns: IID (individual ID), FID (family ID, fill with zeroes), and kp_phenotype (Binary: 1 = control, 2 = case). 
-Phenotype info MUST be in the third column. Use --pheno-name to specify column for phenotype data. 
-```plink2 --vcf kp_vcf.recode.vcf --pheno kp_phenotypev2.txt --pheno-name kp_phenotype --line
-ar allow-no-covars --out kpgwas
+Phenotype info MUST be in the third column. Use --pheno-name to specify column for phenotype data.
+
+```plink2 --vcf kp_vcf.recode.vcf --make-pgen --sort-vars --out sorted_snps
+plink2 --pfile sorted_snps --make-bed --out unpruned_snps
+plink2 --bfile unpruned_snps --indep-pairwise 200kb 0.5 --out pruned_snps
+plink2 --bfile unpruned_snps --make-pgen --exclude pruned_snps.prune.out --out filtered_snps 
+plink2 --pfile filtered_snps --pheno kp_phenotypev2.txt --pheno-name kp_phenotype --linear allow-no-covars --out gwas_results
 ```
 
 Accessing California sea lion reference genome:
